@@ -17,6 +17,9 @@ class Producto(models.Model):
     disponible = models.BooleanField(default=True)
     imagen = models.ImageField(upload_to='productos/', null=True, blank=True)
     marca = models.CharField(max_length=100)
+    
+    class Meta:
+        db_table = "mundodefragancias_producto"
 
     def __str__(self):
         return f"{self.nombre} ({self.categoria})"
